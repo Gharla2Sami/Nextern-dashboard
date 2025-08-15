@@ -20,6 +20,16 @@
         },
       };
     </script>
+    <style>
+      .search-result-link:hover {
+        text-decoration: underline;
+        color: #1d4ed8;
+      }
+
+      .page-url:hover {
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body class="bg-gray-100 font-sans overflow-x-hidden">
     <!-- Mobile menu overlay -->
@@ -621,10 +631,10 @@
               </div>
 
               <div
-                class="nav-submenu max-h-96 overflow-hidden transition-all duration-300 bg-sidebarDark"
+                class="nav-submenu max-h-0 overflow-hidden transition-all duration-300 bg-sidebarDark"
               >
                 <a
-                  href="blank.html"
+                  href="#"
                   class="block px-8 sm:px-10 py-2 text-xs text-gray-400 hover:bg-sidebarLight hover:text-gray-300 transition-colors"
                   >Blank Page</a
                 >
@@ -759,6 +769,7 @@
       <div class="flex-1 lg:ml-0 ml-0 min-w-0">
         <!-- Header -->
         <header
+          style="z-index: 1"
           class="bg-white border-b border-gray-200 px-4 sm:px-6 lg:px-8 py-2.5 sticky top-0"
         >
           <div class="flex items-center justify-between">
@@ -797,7 +808,7 @@
                 <button
                   id="dropdownDefaultButton"
                   data-dropdown-toggle="dropdown"
-                  class="text-slate-900 bg-white hover:bg-white/50 focus:ring-2 focus:outline-none focus:ring-blue-300 text-xs sm:text-sm px-2 sm:px-5 py-2.5 text-center inline-flex items-center"
+                  class="text-slate-900 bg-white hover:bg-white/50 focus:ring-2 focus:outline-none focus:ring-blue-300 rounded-lg text-xs sm:text-sm px-2 sm:px-5 py-2.5 text-center inline-flex items-center"
                   type="button"
                 >
                   <span class="hidden sm:inline">ENGLISH</span>
@@ -808,7 +819,7 @@
                 <!-- Dropdown menu -->
                 <div
                   id="dropdown"
-                  class="z-10 hidden shadow-2xl bg-white divide-y divide-gray-100 mt-6 w-44"
+                  class="z-10 hidden shadow-2xl bg-white divide-y divide-gray-100 rounded-lg mt-6 w-44"
                 >
                   <ul
                     class="py-2 text-sm text-gray-700"
@@ -872,332 +883,278 @@
           <nav
             class="text-sm text-gray-500 mb-2 flex content-center justify-between"
           >
-            <h3 class="text-lg lg:text-xl text-gray-800 font-bold mb-6 lg:mb-8">
-              FAQ
+            <h3
+              class="text-lg lg:text-xl text-gray-800 font-medium mb-6 lg:mb-8"
+            >
+              Search Results
             </h3>
             <span
               ><a href="#" class="text-blue-600 hover:text-blue-800"
                 >Sample pages</a
               >
-              / FAQ</span
+              / Search Results</span
             >
           </nav>
 
-          <!-- Page Title -->
-
-          <!-- Accordion Sections -->
+          <!-- Main Content -->
           <div class="space-y-5">
-            <!-- Section 1 -->
-            <div class="bg-white shadow-sm overflow-hidden">
-              <div
-                class="bg-green-500 text-white text-sm font-medium px-5 py-3"
-              >
-                Section 1
-              </div>
-
-              <div class="accordion-item border-b border-gray-100">
-                <div
-                  class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50"
-                  onclick="toggleAccordion(this)"
-                >
-                  <h3 class="text-sm text-teal-600 font-normal">
-                    How many instances of Lorem Ipsum usage can be found on the
-                    web?
-                  </h3>
-                  <div
-                    class="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center text-gray-500 text-xs bg-white accordion-icon"
+            <div class="bg-white shadow-sm p-6">
+              <!-- Search Form -->
+              <form class="mb-8">
+                <div class="flex flex-col sm:flex-row gap-3">
+                  <input
+                    type="text"
+                    class="flex-1 px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-gray-700"
+                    placeholder="Search Here"
+                    value="Bootstrapdash"
+                  />
+                  <button
+                    type="submit"
+                    class="px-8 py-2 bg-cyan-400 hover:bg-cyan-500 text-white font-medium rounded-sm transition-colors focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
                   >
-                    <i class="bx bx-minus text-lg"></i>
-                  </div>
+                    Search
+                  </button>
                 </div>
-                <div
-                  class="accordion-content px-5 pb-5 text-sm text-gray-600 leading-relaxed"
-                >
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa
-                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-                  beer labore wes andersen cred nesciunt sapiente ea proident.
-                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer farm-to-table, raw denim aesthetic synth nesciunt you
-                  probably haven't heard of them accusamus labore sustainable
-                  VHS.
-                </div>
+              </form>
+
+              <!-- Search Results Header -->
+              <div class="mb-8">
+                <h2 class="text-2xl font-semibold text-gray-900 mb-2">
+                  Search Result For
+                  <span class="underline ml-2">"Bootstrapdash"</span>
+                </h2>
+                <p class="text-gray-500 text-sm">
+                  About 12,100 results (0.52 seconds)
+                </p>
               </div>
 
-              <div class="accordion-item border-b border-gray-100">
-                <div
-                  class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50"
-                  onclick="toggleAccordion(this)"
-                >
-                  <h3 class="text-sm text-teal-600 font-normal">
-                    What is Lorum Ipsum and who invented it?
-                  </h3>
-                  <div
-                    class="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center text-gray-500 text-xs bg-white accordion-icon"
+              <!-- Search Results -->
+              <div class="space-y-6">
+                <!-- Result 1 -->
+                <div class="border-b border-gray-200 pb-6">
+                  <a
+                    href="#"
+                    class="block text-xl font-medium text-blue-600 hover:text-blue-800 mb-1 search-result-link"
                   >
-                    <i class="bx bx-plus text-lg"></i>
-                  </div>
-                </div>
-                <div
-                  class="accordion-content px-5 pb-5 text-sm text-gray-600 leading-relaxed hidden"
-                >
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa
-                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-                  beer labore wes anderson cred nesciunt sapiente ea proident.
-                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer farm-to-table, raw denim aesthetic synth nesciunt you
-                  probably haven't heard of them accusamus labore sustainable
-                  VHS.
-                </div>
-              </div>
-
-              <div class="accordion-item">
-                <div
-                  class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50"
-                  onclick="toggleAccordion(this)"
-                >
-                  <h3 class="text-sm text-teal-600 font-normal">
-                    How may times Lorum Ipsum has been used in this theme?
-                  </h3>
-                  <div
-                    class="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center text-gray-500 text-xs bg-white accordion-icon"
+                    Bootstrapdash
+                  </a>
+                  <a
+                    href="#"
+                    class="text-blue-600 hover:text-blue-800 text-sm page-url"
                   >
-                    <i class="bx bx-plus text-lg"></i>
-                  </div>
+                    https://www.bootstrapdash.com/
+                  </a>
+                  <p class="text-gray-600 mt-2 leading-relaxed max-w-3xl">
+                    Bootstrapdash gives you the most beautiful, free and premium
+                    bootstrap admin dashboard templates and control panel themes
+                    based on Bootstrap 3 and 4.
+                  </p>
                 </div>
-                <div
-                  class="accordion-content px-5 pb-5 text-sm text-gray-600 leading-relaxed hidden"
-                >
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa
-                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-                  beer labore wes anderson cred nesciunt sapiente ea proident.
-                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer farm-to-table, raw denim aesthetic synth nesciunt you
-                  probably haven't heard of them accusamus labore sustainable
-                  VHS.
-                </div>
-              </div>
-            </div>
 
-            <!-- Section 2 -->
-            <div class="bg-white shadow-sm overflow-hidden">
-              <div
-                class="bg-orange-500 text-white text-sm font-medium px-5 py-3"
-              >
-                Section 2
-              </div>
-
-              <div class="accordion-item border-b border-gray-100">
-                <div
-                  class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50"
-                  onclick="toggleAccordion(this)"
-                >
-                  <h3 class="text-sm text-teal-600 font-normal">
-                    How many instances of Lorem Ipsum usage can be found on the
-                    web?
-                  </h3>
-                  <div
-                    class="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center text-gray-500 text-xs bg-white accordion-icon"
+                <!-- Result 2 -->
+                <div class="border-b border-gray-200 pb-6">
+                  <a
+                    href="#"
+                    class="block text-xl font-medium text-blue-600 hover:text-blue-800 mb-1 search-result-link"
                   >
-                    <i class="bx bx-minus text-lg"></i>
-                  </div>
-                </div>
-                <div
-                  class="accordion-content px-5 pb-5 text-sm text-gray-600 leading-relaxed"
-                >
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa
-                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-                  beer labore wes andersen cred nesciunt sapiente ea proident.
-                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer farm-to-table, raw denim aesthetic synth nesciunt you
-                  probably haven't heard of them accusamus labore sustainable
-                  VHS.
-                </div>
-              </div>
-
-              <div class="accordion-item border-b border-gray-100">
-                <div
-                  class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50"
-                  onclick="toggleAccordion(this)"
-                >
-                  <h3 class="text-sm text-teal-600 font-normal">
-                    What is Lorum Ipsum and who invented it?
-                  </h3>
-                  <div
-                    class="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center text-gray-500 text-xs bg-white accordion-icon"
+                    Bootstrapdash Team – Medium
+                  </a>
+                  <a
+                    href="#"
+                    class="text-blue-600 hover:text-blue-800 text-sm page-url"
                   >
-                    <i class="bx bx-plus text-lg"></i>
-                  </div>
+                    https://medium.com/@bootstrapdash
+                  </a>
+                  <p class="text-gray-600 mt-2 leading-relaxed max-w-3xl">
+                    Read writing from Bootstrapdash Team on Medium. We design
+                    and develop awesome admin dashboard templates with
+                    Bootstrap, so you can kick-start and speed up your
+                    development. www.bootstrapdash.com.
+                  </p>
                 </div>
-                <div
-                  class="accordion-content px-5 pb-5 text-sm text-gray-600 leading-relaxed hidden"
-                >
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa
-                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-                  beer labore wes anderson cred nesciunt sapiente ea proident.
-                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer farm-to-table, raw denim aesthetic synth nesciunt you
-                  probably haven't heard of them accusamus labore sustainable
-                  VHS.
-                </div>
-              </div>
 
-              <div class="accordion-item">
-                <div
-                  class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50"
-                  onclick="toggleAccordion(this)"
-                >
-                  <h3 class="text-sm text-teal-600 font-normal">
-                    How may times Lorum Ipsum has been used in this theme?
-                  </h3>
-                  <div
-                    class="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center text-gray-500 text-xs bg-white accordion-icon"
+                <!-- Result 3 -->
+                <div class="border-b border-gray-200 pb-6">
+                  <a
+                    href="#"
+                    class="block text-xl font-medium text-blue-600 hover:text-blue-800 mb-1 search-result-link"
                   >
-                    <i class="bx bx-plus text-lg"></i>
-                  </div>
-                </div>
-                <div
-                  class="accordion-content px-5 pb-5 text-sm text-gray-600 leading-relaxed hidden"
-                >
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa
-                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-                  beer labore wes anderson cred nesciunt sapiente ea proident.
-                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer farm-to-table, raw denim aesthetic synth nesciunt you
-                  probably haven't heard of them accusamus labore sustainable
-                  VHS.
-                </div>
-              </div>
-            </div>
-
-            <!-- Section 3 -->
-            <div class="bg-white shadow-sm overflow-hidden">
-              <div class="bg-red-500 text-white text-sm font-medium px-5 py-3">
-                Section 3
-              </div>
-
-              <div class="accordion-item border-b border-gray-100">
-                <div
-                  class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50"
-                  onclick="toggleAccordion(this)"
-                >
-                  <h3 class="text-sm text-teal-600 font-normal">
-                    How many instances of Lorem Ipsum usage can be found on the
-                    web?
-                  </h3>
-                  <div
-                    class="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center text-gray-500 text-xs bg-white accordion-icon"
+                    Bootstrapdash · GitHub
+                  </a>
+                  <a
+                    href="#"
+                    class="text-blue-600 hover:text-blue-800 text-sm page-url"
                   >
-                    <i class="bx bx-minus text-lg"></i>
-                  </div>
+                    https://github.com/bootstrapdash
+                  </a>
+                  <p class="text-gray-600 mt-2 leading-relaxed max-w-3xl">
+                    Bootstrapdash has 1 repository available. Follow their code
+                    on GitHub.
+                  </p>
                 </div>
-                <div
-                  class="accordion-content px-5 pb-5 text-sm text-gray-600 leading-relaxed"
-                >
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa
-                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-                  beer labore wes andersen cred nesciunt sapiente ea proident.
-                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer farm-to-table, raw denim aesthetic synth nesciunt you
-                  probably haven't heard of them accusamus labore sustainable
-                  VHS.
+
+                <!-- Result 4 -->
+                <div class="border-b border-gray-200 pb-6">
+                  <a
+                    href="#"
+                    class="block text-xl font-medium text-blue-600 hover:text-blue-800 mb-1 search-result-link"
+                  >
+                    bootstrapdash.com - Home | Facebook
+                  </a>
+                  <a
+                    href="#"
+                    class="text-blue-600 hover:text-blue-800 text-sm page-url"
+                  >
+                    https://www.facebook.com/bootstrapdash
+                  </a>
+                  <p class="text-gray-600 mt-2 leading-relaxed max-w-3xl">
+                    Bootstrapdash.com. 9 likes · 4 talking about this. Clean,
+                    customisable admin dashboard template themes / UI WebApp
+                    Kits with a huge collection of...
+                  </p>
+                </div>
+
+                <!-- Result 5 -->
+                <div class="border-b border-gray-200 pb-6">
+                  <a
+                    href="#"
+                    class="block text-xl font-medium text-blue-600 hover:text-blue-800 mb-1 search-result-link"
+                  >
+                    Bootstrapdash Team – Hacker Noon
+                  </a>
+                  <a
+                    href="#"
+                    class="text-blue-600 hover:text-blue-800 text-sm page-url"
+                  >
+                    https://hackernoon.com/@bootstrapdash
+                  </a>
+                  <p class="text-gray-600 mt-2 leading-relaxed max-w-3xl">
+                    Oct 9, 2017 - Read writing from Bootstrapdash Team in Hacker
+                    Noon. We design and develop awesome admin dashboard
+                    templates with Bootstrap, so you can kick-start and speed up
+                    your development. www.bootstrapdash.com.
+                  </p>
+                </div>
+
+                <!-- Result 6 -->
+                <div class="border-b border-gray-200 pb-6">
+                  <a
+                    href="#"
+                    class="block text-xl font-medium text-blue-600 hover:text-blue-800 mb-1 search-result-link"
+                  >
+                    Bootstrapdash | Crunchbase
+                  </a>
+                  <a
+                    href="#"
+                    class="text-blue-600 hover:text-blue-800 text-sm page-url"
+                  >
+                    https://www.crunchbase.com/organization/bootstrapdash
+                  </a>
+                  <p class="text-gray-600 mt-2 leading-relaxed max-w-3xl">
+                    Bootstrapdash creates quality admin templates that are based
+                    on Bootstrap, the most popular front end development
+                    framework.
+                  </p>
+                </div>
+
+                <!-- Result 7 -->
+                <div class="border-b border-gray-200 pb-6">
+                  <a
+                    href="#"
+                    class="block text-xl font-medium text-blue-600 hover:text-blue-800 mb-1 search-result-link"
+                  >
+                    Bootstrapdash.com (@bootstrapdash) | Twitter
+                  </a>
+                  <a
+                    href="#"
+                    class="text-blue-600 hover:text-blue-800 text-sm page-url"
+                  >
+                    https://twitter.com/@bootstrapdash
+                  </a>
+                  <p class="text-gray-600 mt-2 leading-relaxed max-w-3xl">
+                    The latest Tweets from bootstrapdash.com (@bootstrapdash).
+                    Clean, customisable admin dashboard template themes / UI
+                    WebApp Kits with a huge collection of pre-built widgets and
+                    plugins.
+                  </p>
+                </div>
+
+                <!-- Result 8 -->
+                <div class="border-b border-gray-200 pb-6">
+                  <a
+                    href="#"
+                    class="block text-xl font-medium text-blue-600 hover:text-blue-800 mb-1 search-result-link"
+                  >
+                    Bootstrap Dash on Behance
+                  </a>
+                  <a
+                    href="#"
+                    class="text-blue-600 hover:text-blue-800 text-sm page-url"
+                  >
+                    https://www.behance.net/bootstrapdash
+                  </a>
+                  <p class="text-gray-600 mt-2 leading-relaxed max-w-3xl">
+                    Awesome Bootstrap Admin Dashboard Templates. For Faster,
+                    Easier Web Applications Development. Clean, customizable
+                    admin dashboard template theme / UI WebApp Kit with a huge
+                    collection of pre-built widgets and plugins. Design and
+                    build modern, robust, user-friendly web applications real
+                    fast!
+                  </p>
                 </div>
               </div>
 
-              <div class="accordion-item border-b border-gray-100">
-                <div
-                  class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50"
-                  onclick="toggleAccordion(this)"
-                >
-                  <h3 class="text-sm text-teal-600 font-normal">
-                    What is Lorum Ipsum and who invented it?
-                  </h3>
-                  <div
-                    class="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center text-gray-500 text-xs bg-white accordion-icon"
-                  >
-                    <i class="bx bx-plus text-lg"></i>
-                  </div>
-                </div>
-                <div
-                  class="accordion-content px-5 pb-5 text-sm text-gray-600 leading-relaxed hidden"
-                >
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa
-                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-                  beer labore wes anderson cred nesciunt sapiente ea proident.
-                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer farm-to-table, raw denim aesthetic synth nesciunt you
-                  probably haven't heard of them accusamus labore sustainable
-                  VHS.
-                </div>
-              </div>
-
-              <div class="accordion-item">
-                <div
-                  class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50"
-                  onclick="toggleAccordion(this)"
-                >
-                  <h3 class="text-sm text-teal-600 font-normal">
-                    How may times Lorum Ipsum has been used in this theme?
-                  </h3>
-                  <div
-                    class="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center text-gray-500 text-xs bg-white accordion-icon"
-                  >
-                    <i class="bx bx-plus text-lg"></i>
-                  </div>
-                </div>
-                <div
-                  class="accordion-content px-5 pb-5 text-sm text-gray-600 leading-relaxed hidden"
-                >
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa
-                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-                  beer labore wes anderson cred nesciunt sapiente ea proident.
-                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer farm-to-table, raw denim aesthetic synth nesciunt you
-                  probably haven't heard of them accusamus labore sustainable
-                  VHS.
-                </div>
-              </div>
+              <!-- Pagination -->
+              <nav aria-label="Page navigation" class="mt-8">
+                <ul class="flex justify-center space-x-1">
+                  <li>
+                    <a
+                      href="#"
+                      class="px-3 py-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+                    >
+                      Previous
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="px-3 py-2 bg-cyan-400 text-white rounded-lg font-medium"
+                    >
+                      1
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
+                    >
+                      2
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
+                    >
+                      3
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="px-3 py-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+                    >
+                      Next
+                    </a>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
         </main>
 
         <!-- Footer -->
-        <footer
+         <footer
           class="p-4 lg:p-8 text-center text-gray-400 text-xs bg-gray-100"
         >
           Copyright © 2023 Stellar. All rights reserved.
@@ -1212,8 +1169,10 @@
           >
         </footer>
       </div>
+      </div>
     </div>
 
+    <!-- Floating Help Button -->
     <div
       class="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 w-10 h-10 sm:w-12 sm:h-12 bg-teal-400 rounded-full flex items-center justify-center text-white text-lg sm:text-xl cursor-pointer shadow-lg hover:bg-teal-700 transition-colors z-30"
     >
@@ -1255,17 +1214,18 @@
         });
       });
 
-      // Accordion functionality
-      function toggleAccordion(header) {
-        const content = header.nextElementSibling;
-        const icon = header.querySelector(".accordion-icon");
+      function toggleAccordion(id) {
+        const content = document.getElementById(id);
+        const icon = document.querySelector(`[data-target="${id}"] i`);
 
         if (content.classList.contains("hidden")) {
           content.classList.remove("hidden");
-          icon.innerHTML = `<i class="bx bx-minus text-lg"></i>`;
+          icon.classList.remove("bx-plus");
+          icon.classList.add("bx-minus");
         } else {
           content.classList.add("hidden");
-          icon.innerHTML = `<i class="bx bx-plus text-lg"></i>`;
+          icon.classList.remove("bx-minus");
+          icon.classList.add("bx-plus");
         }
       }
 

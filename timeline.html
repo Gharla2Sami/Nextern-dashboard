@@ -20,6 +20,61 @@
         },
       };
     </script>
+    <style>
+      .timeline-line {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: #e5e7eb;
+        transform: translateX(-50%);
+      }
+
+      .timeline-badge {
+        position: relative;
+        z-index: 10;
+      }
+
+      .timeline-panel {
+        position: relative;
+      }
+
+      .timeline-panel::before {
+        content: "";
+        position: absolute;
+        top: 20px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+      }
+
+      .timeline-left .timeline-panel::before {
+        right: -15px;
+        border-width: 10px 0 10px 15px;
+        border-color: transparent transparent transparent #ffffff;
+      }
+
+      .timeline-right .timeline-panel::before {
+        left: -15px;
+        border-width: 10px 15px 10px 0;
+        border-color: transparent #ffffff transparent transparent;
+      }
+
+      @media (max-width: 768px) {
+        .timeline-line {
+          left: 30px;
+        }
+
+        .timeline-right .timeline-panel::before {
+          display: none;
+        }
+
+        .timeline-left .timeline-panel::before {
+          display: none;
+        }
+      }
+    </style>
   </head>
   <body class="bg-gray-100 font-sans overflow-x-hidden">
     <!-- Mobile menu overlay -->
@@ -621,10 +676,10 @@
               </div>
 
               <div
-                class="nav-submenu max-h-96 overflow-hidden transition-all duration-300 bg-sidebarDark"
+                class="nav-submenu max-h-0 overflow-hidden transition-all duration-300 bg-sidebarDark"
               >
                 <a
-                  href="blank.html"
+                  href="#"
                   class="block px-8 sm:px-10 py-2 text-xs text-gray-400 hover:bg-sidebarLight hover:text-gray-300 transition-colors"
                   >Blank Page</a
                 >
@@ -759,6 +814,7 @@
       <div class="flex-1 lg:ml-0 ml-0 min-w-0">
         <!-- Header -->
         <header
+          style="z-index: 1"
           class="bg-white border-b border-gray-200 px-4 sm:px-6 lg:px-8 py-2.5 sticky top-0"
         >
           <div class="flex items-center justify-between">
@@ -797,7 +853,7 @@
                 <button
                   id="dropdownDefaultButton"
                   data-dropdown-toggle="dropdown"
-                  class="text-slate-900 bg-white hover:bg-white/50 focus:ring-2 focus:outline-none focus:ring-blue-300 text-xs sm:text-sm px-2 sm:px-5 py-2.5 text-center inline-flex items-center"
+                  class="text-slate-900 bg-white hover:bg-white/50 focus:ring-2 focus:outline-none focus:ring-blue-300 rounded-lg text-xs sm:text-sm px-2 sm:px-5 py-2.5 text-center inline-flex items-center"
                   type="button"
                 >
                   <span class="hidden sm:inline">ENGLISH</span>
@@ -808,7 +864,7 @@
                 <!-- Dropdown menu -->
                 <div
                   id="dropdown"
-                  class="z-10 hidden shadow-2xl bg-white divide-y divide-gray-100 mt-6 w-44"
+                  class="z-10 hidden shadow-2xl bg-white divide-y divide-gray-100 rounded-lg mt-6 w-44"
                 >
                   <ul
                     class="py-2 text-sm text-gray-700"
@@ -872,324 +928,423 @@
           <nav
             class="text-sm text-gray-500 mb-2 flex content-center justify-between"
           >
-            <h3 class="text-lg lg:text-xl text-gray-800 font-bold mb-6 lg:mb-8">
-              FAQ
+            <h3
+              class="text-lg lg:text-xl text-gray-800 font-medium mb-6 lg:mb-8"
+            >
+              Timeline
             </h3>
             <span
               ><a href="#" class="text-blue-600 hover:text-blue-800"
                 >Sample pages</a
               >
-              / FAQ</span
+              / Timeline</span
             >
           </nav>
 
-          <!-- Page Title -->
-
-          <!-- Accordion Sections -->
-          <div class="space-y-5">
-            <!-- Section 1 -->
-            <div class="bg-white shadow-sm overflow-hidden">
-              <div
-                class="bg-green-500 text-white text-sm font-medium px-5 py-3"
-              >
-                Section 1
+          <!-- Main Content -->
+          <div class="space-y-5" style="z-index: 0">
+            <div class="bg-white rounded-lg shadow-sm p-6">
+              <div class="mb-6">
+                <h2 class="text-xl font-semibold text-gray-900 mb-2">
+                  Timeline
+                </h2>
+                <p class="text-gray-600">A simple timeline</p>
               </div>
 
-              <div class="accordion-item border-b border-gray-100">
-                <div
-                  class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50"
-                  onclick="toggleAccordion(this)"
-                >
-                  <h3 class="text-sm text-teal-600 font-normal">
-                    How many instances of Lorem Ipsum usage can be found on the
-                    web?
-                  </h3>
-                  <div
-                    class="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center text-gray-500 text-xs bg-white accordion-icon"
-                  >
-                    <i class="bx bx-minus text-lg"></i>
+              <div class="relative">
+                <!-- Timeline Line -->
+                <div class="timeline-line hidden md:block"></div>
+
+                <!-- Timeline Items -->
+                <div class="space-y-8">
+                  <!-- Item 1 - Warning/Yellow -->
+                  <div class="relative flex items-start timeline-left">
+                    <div class="hidden md:flex md:w-1/2 md:pr-8">
+                      <div class="w-full">
+                        <div
+                          class="bg-white rounded-lg shadow-md p-6 timeline-panel"
+                        >
+                          <div class="mb-4">
+                            <h3
+                              class="text-lg font-semibold text-gray-900 mb-2"
+                            >
+                              Bootstrap 5 Beta 2
+                            </h3>
+                          </div>
+                          <div class="mb-4">
+                            <p class="text-gray-600 text-sm">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing
+                              elit. Duis pharetra varius quam sit amet
+                              vulputate. Quisque mauris augue,
+                            </p>
+                          </div>
+                          <div
+                            class="flex items-center justify-between text-sm"
+                          >
+                            <div class="flex items-center text-gray-500">
+                              <i class="fas fa-heart mr-1"></i>
+                              <span>19</span>
+                            </div>
+                            <span class="font-semibold text-gray-700"
+                              >19 Oct 2017</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="timeline-badge flex-shrink-0 mx-4 md:mx-0">
+                      <div
+                        class="w-4 h-4 bg-yellow-500 rounded-full border-4 border-white shadow-md"
+                      ></div>
+                    </div>
+
+                    <!-- Mobile version -->
+                    <div class="md:hidden flex-1 ml-4">
+                      <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                          Bootstrap 5 Beta 2
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit. Duis pharetra varius quam sit amet vulputate.
+                          Quisque mauris augue,
+                        </p>
+                        <div class="flex items-center justify-between text-sm">
+                          <div class="flex items-center text-gray-500">
+                            <i class="fas fa-heart mr-1"></i>
+                            <span>19</span>
+                          </div>
+                          <span class="font-semibold text-gray-700"
+                            >19 Oct 2017</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="hidden md:flex md:w-1/2 md:pl-8"></div>
                   </div>
-                </div>
-                <div
-                  class="accordion-content px-5 pb-5 text-sm text-gray-600 leading-relaxed"
-                >
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa
-                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-                  beer labore wes andersen cred nesciunt sapiente ea proident.
-                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer farm-to-table, raw denim aesthetic synth nesciunt you
-                  probably haven't heard of them accusamus labore sustainable
-                  VHS.
-                </div>
-              </div>
 
-              <div class="accordion-item border-b border-gray-100">
-                <div
-                  class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50"
-                  onclick="toggleAccordion(this)"
-                >
-                  <h3 class="text-sm text-teal-600 font-normal">
-                    What is Lorum Ipsum and who invented it?
-                  </h3>
-                  <div
-                    class="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center text-gray-500 text-xs bg-white accordion-icon"
-                  >
-                    <i class="bx bx-plus text-lg"></i>
+                  <!-- Item 2 - Danger/Red (Right) -->
+                  <div class="relative flex items-start timeline-right">
+                    <div class="hidden md:flex md:w-1/2 md:pr-8"></div>
+
+                    <div class="timeline-badge flex-shrink-0 mx-4 md:mx-0">
+                      <div
+                        class="w-4 h-4 bg-red-500 rounded-full border-4 border-white shadow-md"
+                      ></div>
+                    </div>
+
+                    <div class="md:w-1/2 md:pl-8 flex-1 ml-4 md:ml-0">
+                      <div
+                        class="bg-white rounded-lg shadow-md p-6 timeline-panel"
+                      >
+                        <div class="mb-4">
+                          <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                            Bootstrap 5 Beta 1
+                          </h3>
+                        </div>
+                        <div class="mb-4">
+                          <p class="text-gray-600 text-sm">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Duis pharetra varius quam sit amet vulputate.
+                            Quisque mauris augue,
+                          </p>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                          <div class="flex items-center text-gray-500">
+                            <i class="fas fa-heart mr-1"></i>
+                            <span>25</span>
+                          </div>
+                          <span class="font-semibold text-gray-700"
+                            >10th Aug 2017</span
+                          >
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div
-                  class="accordion-content px-5 pb-5 text-sm text-gray-600 leading-relaxed hidden"
-                >
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa
-                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-                  beer labore wes anderson cred nesciunt sapiente ea proident.
-                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer farm-to-table, raw denim aesthetic synth nesciunt you
-                  probably haven't heard of them accusamus labore sustainable
-                  VHS.
-                </div>
-              </div>
 
-              <div class="accordion-item">
-                <div
-                  class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50"
-                  onclick="toggleAccordion(this)"
-                >
-                  <h3 class="text-sm text-teal-600 font-normal">
-                    How may times Lorum Ipsum has been used in this theme?
-                  </h3>
-                  <div
-                    class="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center text-gray-500 text-xs bg-white accordion-icon"
-                  >
-                    <i class="bx bx-plus text-lg"></i>
+                  <!-- Item 3 - Success/Green (Left) -->
+                  <div class="relative flex items-start timeline-left">
+                    <div class="hidden md:flex md:w-1/2 md:pr-8">
+                      <div class="w-full">
+                        <div
+                          class="bg-white rounded-lg shadow-md p-6 timeline-panel"
+                        >
+                          <div class="mb-4">
+                            <h3
+                              class="text-lg font-semibold text-gray-900 mb-2"
+                            >
+                              Bootstrap 5 alpha 6
+                            </h3>
+                          </div>
+                          <div class="mb-4">
+                            <p class="text-gray-600 text-sm">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing
+                              elit. Duis pharetra varius quam sit amet
+                              vulputate. Quisque mauris augue,
+                            </p>
+                          </div>
+                          <div
+                            class="flex items-center justify-between text-sm"
+                          >
+                            <div class="flex items-center text-gray-500">
+                              <i class="fas fa-heart mr-1"></i>
+                              <span>19</span>
+                            </div>
+                            <span class="font-semibold text-gray-700"
+                              >5th Sep 2016</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="timeline-badge flex-shrink-0 mx-4 md:mx-0">
+                      <div
+                        class="w-4 h-4 bg-green-500 rounded-full border-4 border-white shadow-md"
+                      ></div>
+                    </div>
+
+                    <!-- Mobile version -->
+                    <div class="md:hidden flex-1 ml-4">
+                      <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                          Bootstrap 5 alpha 6
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit. Duis pharetra varius quam sit amet vulputate.
+                          Quisque mauris augue,
+                        </p>
+                        <div class="flex items-center justify-between text-sm">
+                          <div class="flex items-center text-gray-500">
+                            <i class="fas fa-heart mr-1"></i>
+                            <span>19</span>
+                          </div>
+                          <span class="font-semibold text-gray-700"
+                            >5th Sep 2016</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="hidden md:flex md:w-1/2 md:pl-8"></div>
                   </div>
-                </div>
-                <div
-                  class="accordion-content px-5 pb-5 text-sm text-gray-600 leading-relaxed hidden"
-                >
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa
-                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-                  beer labore wes anderson cred nesciunt sapiente ea proident.
-                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer farm-to-table, raw denim aesthetic synth nesciunt you
-                  probably haven't heard of them accusamus labore sustainable
-                  VHS.
-                </div>
-              </div>
-            </div>
 
-            <!-- Section 2 -->
-            <div class="bg-white shadow-sm overflow-hidden">
-              <div
-                class="bg-orange-500 text-white text-sm font-medium px-5 py-3"
-              >
-                Section 2
-              </div>
+                  <!-- Item 4 - Info/Blue (Right) -->
+                  <div class="relative flex items-start timeline-right">
+                    <div class="hidden md:flex md:w-1/2 md:pr-8"></div>
 
-              <div class="accordion-item border-b border-gray-100">
-                <div
-                  class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50"
-                  onclick="toggleAccordion(this)"
-                >
-                  <h3 class="text-sm text-teal-600 font-normal">
-                    How many instances of Lorem Ipsum usage can be found on the
-                    web?
-                  </h3>
-                  <div
-                    class="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center text-gray-500 text-xs bg-white accordion-icon"
-                  >
-                    <i class="bx bx-minus text-lg"></i>
+                    <div class="timeline-badge flex-shrink-0 mx-4 md:mx-0">
+                      <div
+                        class="w-4 h-4 bg-blue-500 rounded-full border-4 border-white shadow-md"
+                      ></div>
+                    </div>
+
+                    <div class="md:w-1/2 md:pl-8 flex-1 ml-4 md:ml-0">
+                      <div
+                        class="bg-white rounded-lg shadow-md p-6 timeline-panel"
+                      >
+                        <div class="mb-4">
+                          <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                            Bootstrap 5 alpha 3
+                          </h3>
+                        </div>
+                        <div class="mb-4">
+                          <p class="text-gray-600 text-sm">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Duis pharetra varius quam sit amet vulputate.
+                            Quisque mauris augue,
+                          </p>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                          <div class="flex items-center text-gray-500">
+                            <i class="fas fa-heart mr-1"></i>
+                            <span>19</span>
+                          </div>
+                          <span class="font-semibold text-gray-700"
+                            >27th July 2016</span
+                          >
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div
-                  class="accordion-content px-5 pb-5 text-sm text-gray-600 leading-relaxed"
-                >
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa
-                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-                  beer labore wes andersen cred nesciunt sapiente ea proident.
-                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer farm-to-table, raw denim aesthetic synth nesciunt you
-                  probably haven't heard of them accusamus labore sustainable
-                  VHS.
-                </div>
-              </div>
 
-              <div class="accordion-item border-b border-gray-100">
-                <div
-                  class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50"
-                  onclick="toggleAccordion(this)"
-                >
-                  <h3 class="text-sm text-teal-600 font-normal">
-                    What is Lorum Ipsum and who invented it?
-                  </h3>
-                  <div
-                    class="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center text-gray-500 text-xs bg-white accordion-icon"
-                  >
-                    <i class="bx bx-plus text-lg"></i>
+                  <!-- Item 5 - Primary/Purple (Left) -->
+                  <div class="relative flex items-start timeline-left">
+                    <div class="hidden md:flex md:w-1/2 md:pr-8">
+                      <div class="w-full">
+                        <div
+                          class="bg-white rounded-lg shadow-md p-6 timeline-panel"
+                        >
+                          <div class="mb-4">
+                            <h3
+                              class="text-lg font-semibold text-gray-900 mb-2"
+                            >
+                              Bootstrap 3.3.7
+                            </h3>
+                          </div>
+                          <div class="mb-4">
+                            <p class="text-gray-600 text-sm">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing
+                              elit. Duis pharetra varius quam sit amet
+                              vulputate. Quisque mauris augue,
+                            </p>
+                          </div>
+                          <div
+                            class="flex items-center justify-between text-sm"
+                          >
+                            <div class="flex items-center text-gray-500">
+                              <i class="fas fa-heart mr-1"></i>
+                              <span>25</span>
+                            </div>
+                            <span class="font-semibold text-gray-700"
+                              >25th July 2016</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="timeline-badge flex-shrink-0 mx-4 md:mx-0">
+                      <div
+                        class="w-4 h-4 bg-purple-500 rounded-full border-4 border-white shadow-md"
+                      ></div>
+                    </div>
+
+                    <!-- Mobile version -->
+                    <div class="md:hidden flex-1 ml-4">
+                      <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                          Bootstrap 3.3.7
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit. Duis pharetra varius quam sit amet vulputate.
+                          Quisque mauris augue,
+                        </p>
+                        <div class="flex items-center justify-between text-sm">
+                          <div class="flex items-center text-gray-500">
+                            <i class="fas fa-heart mr-1"></i>
+                            <span>25</span>
+                          </div>
+                          <span class="font-semibold text-gray-700"
+                            >25th July 2016</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="hidden md:flex md:w-1/2 md:pl-8"></div>
                   </div>
-                </div>
-                <div
-                  class="accordion-content px-5 pb-5 text-sm text-gray-600 leading-relaxed hidden"
-                >
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa
-                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-                  beer labore wes anderson cred nesciunt sapiente ea proident.
-                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer farm-to-table, raw denim aesthetic synth nesciunt you
-                  probably haven't heard of them accusamus labore sustainable
-                  VHS.
-                </div>
-              </div>
 
-              <div class="accordion-item">
-                <div
-                  class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50"
-                  onclick="toggleAccordion(this)"
-                >
-                  <h3 class="text-sm text-teal-600 font-normal">
-                    How may times Lorum Ipsum has been used in this theme?
-                  </h3>
-                  <div
-                    class="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center text-gray-500 text-xs bg-white accordion-icon"
-                  >
-                    <i class="bx bx-plus text-lg"></i>
+                  <!-- Item 6 - Info/Blue (Right) -->
+                  <div class="relative flex items-start timeline-right">
+                    <div class="hidden md:flex md:w-1/2 md:pr-8"></div>
+
+                    <div class="timeline-badge flex-shrink-0 mx-4 md:mx-0">
+                      <div
+                        class="w-4 h-4 bg-blue-500 rounded-full border-4 border-white shadow-md"
+                      ></div>
+                    </div>
+
+                    <div class="md:w-1/2 md:pl-8 flex-1 ml-4 md:ml-0">
+                      <div
+                        class="bg-white rounded-lg shadow-md p-6 timeline-panel"
+                      >
+                        <div class="mb-4">
+                          <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                            Bootstrap 5 Alpha 1
+                          </h3>
+                        </div>
+                        <div class="mb-4">
+                          <p class="text-gray-600 text-sm">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Duis pharetra varius quam sit amet vulputate.
+                            Quisque mauris augue,
+                          </p>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                          <div class="flex items-center text-gray-500">
+                            <i class="fas fa-heart mr-1"></i>
+                            <span>32</span>
+                          </div>
+                          <span class="font-semibold text-gray-700"
+                            >19th Aug 2015</span
+                          >
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div
-                  class="accordion-content px-5 pb-5 text-sm text-gray-600 leading-relaxed hidden"
-                >
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa
-                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-                  beer labore wes anderson cred nesciunt sapiente ea proident.
-                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer farm-to-table, raw denim aesthetic synth nesciunt you
-                  probably haven't heard of them accusamus labore sustainable
-                  VHS.
-                </div>
-              </div>
-            </div>
 
-            <!-- Section 3 -->
-            <div class="bg-white shadow-sm overflow-hidden">
-              <div class="bg-red-500 text-white text-sm font-medium px-5 py-3">
-                Section 3
-              </div>
+                  <!-- Item 7 - Success/Green (Left) -->
+                  <div class="relative flex items-start timeline-left">
+                    <div class="hidden md:flex md:w-1/2 md:pr-8">
+                      <div class="w-full">
+                        <div
+                          class="bg-white rounded-lg shadow-md p-6 timeline-panel"
+                        >
+                          <div class="mb-4">
+                            <h3
+                              class="text-lg font-semibold text-gray-900 mb-2"
+                            >
+                              Bootstrap 3.3.5
+                            </h3>
+                          </div>
+                          <div class="mb-4">
+                            <p class="text-gray-600 text-sm">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing
+                              elit. Duis pharetra varius quam sit amet
+                              vulputate. Quisque mauris augue,
+                            </p>
+                          </div>
+                          <div
+                            class="flex items-center justify-between text-sm"
+                          >
+                            <div class="flex items-center text-gray-500">
+                              <i class="fas fa-heart mr-1"></i>
+                              <span>26</span>
+                            </div>
+                            <span class="font-semibold text-gray-700"
+                              >15th Jun 2015</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
-              <div class="accordion-item border-b border-gray-100">
-                <div
-                  class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50"
-                  onclick="toggleAccordion(this)"
-                >
-                  <h3 class="text-sm text-teal-600 font-normal">
-                    How many instances of Lorem Ipsum usage can be found on the
-                    web?
-                  </h3>
-                  <div
-                    class="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center text-gray-500 text-xs bg-white accordion-icon"
-                  >
-                    <i class="bx bx-minus text-lg"></i>
+                    <div class="timeline-badge flex-shrink-0 mx-4 md:mx-0">
+                      <div
+                        class="w-4 h-4 bg-green-500 rounded-full border-4 border-white shadow-md"
+                      ></div>
+                    </div>
+
+                    <!-- Mobile version -->
+                    <div class="md:hidden flex-1 ml-4">
+                      <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                          Bootstrap 3.3.5
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit. Duis pharetra varius quam sit amet vulputate.
+                          Quisque mauris augue,
+                        </p>
+                        <div class="flex items-center justify-between text-sm">
+                          <div class="flex items-center text-gray-500">
+                            <i class="fas fa-heart mr-1"></i>
+                            <span>26</span>
+                          </div>
+                          <span class="font-semibold text-gray-700"
+                            >15th Jun 2015</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="hidden md:flex md:w-1/2 md:pl-8"></div>
                   </div>
-                </div>
-                <div
-                  class="accordion-content px-5 pb-5 text-sm text-gray-600 leading-relaxed"
-                >
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa
-                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-                  beer labore wes andersen cred nesciunt sapiente ea proident.
-                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer farm-to-table, raw denim aesthetic synth nesciunt you
-                  probably haven't heard of them accusamus labore sustainable
-                  VHS.
-                </div>
-              </div>
-
-              <div class="accordion-item border-b border-gray-100">
-                <div
-                  class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50"
-                  onclick="toggleAccordion(this)"
-                >
-                  <h3 class="text-sm text-teal-600 font-normal">
-                    What is Lorum Ipsum and who invented it?
-                  </h3>
-                  <div
-                    class="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center text-gray-500 text-xs bg-white accordion-icon"
-                  >
-                    <i class="bx bx-plus text-lg"></i>
-                  </div>
-                </div>
-                <div
-                  class="accordion-content px-5 pb-5 text-sm text-gray-600 leading-relaxed hidden"
-                >
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa
-                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-                  beer labore wes anderson cred nesciunt sapiente ea proident.
-                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer farm-to-table, raw denim aesthetic synth nesciunt you
-                  probably haven't heard of them accusamus labore sustainable
-                  VHS.
-                </div>
-              </div>
-
-              <div class="accordion-item">
-                <div
-                  class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50"
-                  onclick="toggleAccordion(this)"
-                >
-                  <h3 class="text-sm text-teal-600 font-normal">
-                    How may times Lorum Ipsum has been used in this theme?
-                  </h3>
-                  <div
-                    class="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center text-gray-500 text-xs bg-white accordion-icon"
-                  >
-                    <i class="bx bx-plus text-lg"></i>
-                  </div>
-                </div>
-                <div
-                  class="accordion-content px-5 pb-5 text-sm text-gray-600 leading-relaxed hidden"
-                >
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa
-                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-                  beer labore wes anderson cred nesciunt sapiente ea proident.
-                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer farm-to-table, raw denim aesthetic synth nesciunt you
-                  probably haven't heard of them accusamus labore sustainable
-                  VHS.
                 </div>
               </div>
             </div>
@@ -1197,7 +1352,7 @@
         </main>
 
         <!-- Footer -->
-        <footer
+         <footer
           class="p-4 lg:p-8 text-center text-gray-400 text-xs bg-gray-100"
         >
           Copyright © 2023 Stellar. All rights reserved.
@@ -1212,8 +1367,10 @@
           >
         </footer>
       </div>
+      </div>
     </div>
 
+    <!-- Floating Help Button -->
     <div
       class="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 w-10 h-10 sm:w-12 sm:h-12 bg-teal-400 rounded-full flex items-center justify-center text-white text-lg sm:text-xl cursor-pointer shadow-lg hover:bg-teal-700 transition-colors z-30"
     >
@@ -1255,17 +1412,18 @@
         });
       });
 
-      // Accordion functionality
-      function toggleAccordion(header) {
-        const content = header.nextElementSibling;
-        const icon = header.querySelector(".accordion-icon");
+      function toggleAccordion(id) {
+        const content = document.getElementById(id);
+        const icon = document.querySelector(`[data-target="${id}"] i`);
 
         if (content.classList.contains("hidden")) {
           content.classList.remove("hidden");
-          icon.innerHTML = `<i class="bx bx-minus text-lg"></i>`;
+          icon.classList.remove("bx-plus");
+          icon.classList.add("bx-minus");
         } else {
           content.classList.add("hidden");
-          icon.innerHTML = `<i class="bx bx-plus text-lg"></i>`;
+          icon.classList.remove("bx-minus");
+          icon.classList.add("bx-plus");
         }
       }
 

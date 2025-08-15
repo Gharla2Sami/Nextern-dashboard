@@ -20,6 +20,69 @@
         },
       };
     </script>
+    <style>
+      .portfolio-card {
+        background: linear-gradient(
+          135deg,
+          rgba(0, 0, 0, 0.3) 0%,
+          rgba(0, 0, 0, 0.1) 100%
+        );
+        backdrop-filter: blur(10px);
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .portfolio-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+      }
+
+      .portfolio-card img {
+        transition: all 0.4s ease;
+        filter: brightness(0.8);
+      }
+
+      .portfolio-card:hover img {
+        transform: scale(1.05);
+        filter: brightness(1);
+      }
+
+      .portfolio-card .overlay {
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0.3) 50%,
+          rgba(0, 0, 0, 0.8) 100%
+        );
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+
+      .portfolio-card:hover .overlay {
+        opacity: 1;
+      }
+
+      .portfolio-card h4 {
+        transform: translateY(20px);
+        opacity: 0;
+        transition: all 0.3s ease 0.1s;
+      }
+
+      .portfolio-card p {
+        transform: translateY(20px);
+        opacity: 0;
+        transition: all 0.3s ease 0.2s;
+      }
+
+      .portfolio-card:hover h4,
+      .portfolio-card:hover p {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .gradient-bg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+    </style>
   </head>
   <body class="bg-gray-100 font-sans overflow-x-hidden">
     <!-- Mobile menu overlay -->
@@ -621,10 +684,10 @@
               </div>
 
               <div
-                class="nav-submenu max-h-96 overflow-hidden transition-all duration-300 bg-sidebarDark"
+                class="nav-submenu max-h-0 overflow-hidden transition-all duration-300 bg-sidebarDark"
               >
                 <a
-                  href="blank.html"
+                  href="#"
                   class="block px-8 sm:px-10 py-2 text-xs text-gray-400 hover:bg-sidebarLight hover:text-gray-300 transition-colors"
                   >Blank Page</a
                 >
@@ -759,6 +822,7 @@
       <div class="flex-1 lg:ml-0 ml-0 min-w-0">
         <!-- Header -->
         <header
+          style="z-index: 1"
           class="bg-white border-b border-gray-200 px-4 sm:px-6 lg:px-8 py-2.5 sticky top-0"
         >
           <div class="flex items-center justify-between">
@@ -797,7 +861,7 @@
                 <button
                   id="dropdownDefaultButton"
                   data-dropdown-toggle="dropdown"
-                  class="text-slate-900 bg-white hover:bg-white/50 focus:ring-2 focus:outline-none focus:ring-blue-300 text-xs sm:text-sm px-2 sm:px-5 py-2.5 text-center inline-flex items-center"
+                  class="text-slate-900 bg-white hover:bg-white/50 focus:ring-2 focus:outline-none focus:ring-blue-300 rounded-lg text-xs sm:text-sm px-2 sm:px-5 py-2.5 text-center inline-flex items-center"
                   type="button"
                 >
                   <span class="hidden sm:inline">ENGLISH</span>
@@ -808,7 +872,7 @@
                 <!-- Dropdown menu -->
                 <div
                   id="dropdown"
-                  class="z-10 hidden shadow-2xl bg-white divide-y divide-gray-100 mt-6 w-44"
+                  class="z-10 hidden shadow-2xl bg-white divide-y divide-gray-100 rounded-lg mt-6 w-44"
                 >
                   <ul
                     class="py-2 text-sm text-gray-700"
@@ -872,324 +936,313 @@
           <nav
             class="text-sm text-gray-500 mb-2 flex content-center justify-between"
           >
-            <h3 class="text-lg lg:text-xl text-gray-800 font-bold mb-6 lg:mb-8">
-              FAQ
+            <h3
+              class="text-lg lg:text-xl text-gray-800 font-medium mb-6 lg:mb-8"
+            >
+              Portfolio
             </h3>
             <span
               ><a href="#" class="text-blue-600 hover:text-blue-800"
                 >Sample pages</a
               >
-              / FAQ</span
+              / Portfolio</span
             >
           </nav>
+          <div class="space-y-5" style="z-index: 0">
+            <!-- Header -->
 
-          <!-- Page Title -->
-
-          <!-- Accordion Sections -->
-          <div class="space-y-5">
-            <!-- Section 1 -->
-            <div class="bg-white shadow-sm overflow-hidden">
+            <!-- Portfolio Grid -->
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+            >
+              <!-- Photography -->
               <div
-                class="bg-green-500 text-white text-sm font-medium px-5 py-3"
+                class="portfolio-card relative overflow-hidden rounded-2xl shadow-lg cursor-pointer group h-64"
               >
-                Section 1
-              </div>
-
-              <div class="accordion-item border-b border-gray-100">
+                <img
+                  src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=400&h=300&fit=crop"
+                  alt="Photography"
+                  class="w-full h-full object-cover"
+                />
                 <div
-                  class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50"
-                  onclick="toggleAccordion(this)"
+                  class="overlay absolute inset-0 flex flex-col justify-end p-6"
                 >
-                  <h3 class="text-sm text-teal-600 font-normal">
-                    How many instances of Lorem Ipsum usage can be found on the
-                    web?
-                  </h3>
-                  <div
-                    class="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center text-gray-500 text-xs bg-white accordion-icon"
-                  >
-                    <i class="bx bx-minus text-lg"></i>
-                  </div>
-                </div>
-                <div
-                  class="accordion-content px-5 pb-5 text-sm text-gray-600 leading-relaxed"
-                >
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa
-                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-                  beer labore wes andersen cred nesciunt sapiente ea proident.
-                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer farm-to-table, raw denim aesthetic synth nesciunt you
-                  probably haven't heard of them accusamus labore sustainable
-                  VHS.
+                  <h4 class="text-white text-xl font-bold mb-2">Photography</h4>
+                  <p class="text-white/90 text-sm">
+                    Capturing moments that tell beautiful stories
+                  </p>
                 </div>
               </div>
 
-              <div class="accordion-item border-b border-gray-100">
-                <div
-                  class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50"
-                  onclick="toggleAccordion(this)"
-                >
-                  <h3 class="text-sm text-teal-600 font-normal">
-                    What is Lorum Ipsum and who invented it?
-                  </h3>
-                  <div
-                    class="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center text-gray-500 text-xs bg-white accordion-icon"
-                  >
-                    <i class="bx bx-plus text-lg"></i>
-                  </div>
-                </div>
-                <div
-                  class="accordion-content px-5 pb-5 text-sm text-gray-600 leading-relaxed hidden"
-                >
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa
-                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-                  beer labore wes anderson cred nesciunt sapiente ea proident.
-                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer farm-to-table, raw denim aesthetic synth nesciunt you
-                  probably haven't heard of them accusamus labore sustainable
-                  VHS.
-                </div>
-              </div>
-
-              <div class="accordion-item">
-                <div
-                  class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50"
-                  onclick="toggleAccordion(this)"
-                >
-                  <h3 class="text-sm text-teal-600 font-normal">
-                    How may times Lorum Ipsum has been used in this theme?
-                  </h3>
-                  <div
-                    class="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center text-gray-500 text-xs bg-white accordion-icon"
-                  >
-                    <i class="bx bx-plus text-lg"></i>
-                  </div>
-                </div>
-                <div
-                  class="accordion-content px-5 pb-5 text-sm text-gray-600 leading-relaxed hidden"
-                >
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa
-                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-                  beer labore wes anderson cred nesciunt sapiente ea proident.
-                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer farm-to-table, raw denim aesthetic synth nesciunt you
-                  probably haven't heard of them accusamus labore sustainable
-                  VHS.
-                </div>
-              </div>
-            </div>
-
-            <!-- Section 2 -->
-            <div class="bg-white shadow-sm overflow-hidden">
+              <!-- Lifestyle -->
               <div
-                class="bg-orange-500 text-white text-sm font-medium px-5 py-3"
+                class="portfolio-card relative overflow-hidden rounded-2xl shadow-lg cursor-pointer group h-64"
               >
-                Section 2
-              </div>
-
-              <div class="accordion-item border-b border-gray-100">
+                <img
+                  src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop"
+                  alt="Lifestyle"
+                  class="w-full h-full object-cover"
+                />
                 <div
-                  class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50"
-                  onclick="toggleAccordion(this)"
+                  class="overlay absolute inset-0 flex flex-col justify-end p-6"
                 >
-                  <h3 class="text-sm text-teal-600 font-normal">
-                    How many instances of Lorem Ipsum usage can be found on the
-                    web?
-                  </h3>
-                  <div
-                    class="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center text-gray-500 text-xs bg-white accordion-icon"
-                  >
-                    <i class="bx bx-minus text-lg"></i>
-                  </div>
-                </div>
-                <div
-                  class="accordion-content px-5 pb-5 text-sm text-gray-600 leading-relaxed"
-                >
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa
-                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-                  beer labore wes andersen cred nesciunt sapiente ea proident.
-                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer farm-to-table, raw denim aesthetic synth nesciunt you
-                  probably haven't heard of them accusamus labore sustainable
-                  VHS.
+                  <h4 class="text-white text-xl font-bold mb-2">Lifestyle</h4>
+                  <p class="text-white/90 text-sm">
+                    Living life to the fullest with style and grace
+                  </p>
                 </div>
               </div>
 
-              <div class="accordion-item border-b border-gray-100">
+              <!-- Tech Geeks -->
+              <div
+                class="portfolio-card relative overflow-hidden rounded-2xl shadow-lg cursor-pointer group h-64"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=400&h=300&fit=crop"
+                  alt="Tech Geeks"
+                  class="w-full h-full object-cover"
+                />
                 <div
-                  class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50"
-                  onclick="toggleAccordion(this)"
+                  class="overlay absolute inset-0 flex flex-col justify-end p-6"
                 >
-                  <h3 class="text-sm text-teal-600 font-normal">
-                    What is Lorum Ipsum and who invented it?
-                  </h3>
-                  <div
-                    class="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center text-gray-500 text-xs bg-white accordion-icon"
-                  >
-                    <i class="bx bx-plus text-lg"></i>
-                  </div>
-                </div>
-                <div
-                  class="accordion-content px-5 pb-5 text-sm text-gray-600 leading-relaxed hidden"
-                >
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa
-                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-                  beer labore wes anderson cred nesciunt sapiente ea proident.
-                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer farm-to-table, raw denim aesthetic synth nesciunt you
-                  probably haven't heard of them accusamus labore sustainable
-                  VHS.
+                  <h4 class="text-white text-xl font-bold mb-2">Tech Geeks</h4>
+                  <p class="text-white/90 text-sm">
+                    Innovation and technology at its finest
+                  </p>
                 </div>
               </div>
 
-              <div class="accordion-item">
+              <!-- Explore World -->
+              <div
+                class="portfolio-card relative overflow-hidden rounded-2xl shadow-lg cursor-pointer group h-64"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=300&fit=crop"
+                  alt="Explore World"
+                  class="w-full h-full object-cover"
+                />
                 <div
-                  class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50"
-                  onclick="toggleAccordion(this)"
+                  class="overlay absolute inset-0 flex flex-col justify-end p-6"
                 >
-                  <h3 class="text-sm text-teal-600 font-normal">
-                    How may times Lorum Ipsum has been used in this theme?
-                  </h3>
-                  <div
-                    class="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center text-gray-500 text-xs bg-white accordion-icon"
-                  >
-                    <i class="bx bx-plus text-lg"></i>
-                  </div>
-                </div>
-                <div
-                  class="accordion-content px-5 pb-5 text-sm text-gray-600 leading-relaxed hidden"
-                >
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa
-                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-                  beer labore wes anderson cred nesciunt sapiente ea proident.
-                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer farm-to-table, raw denim aesthetic synth nesciunt you
-                  probably haven't heard of them accusamus labore sustainable
-                  VHS.
-                </div>
-              </div>
-            </div>
-
-            <!-- Section 3 -->
-            <div class="bg-white shadow-sm overflow-hidden">
-              <div class="bg-red-500 text-white text-sm font-medium px-5 py-3">
-                Section 3
-              </div>
-
-              <div class="accordion-item border-b border-gray-100">
-                <div
-                  class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50"
-                  onclick="toggleAccordion(this)"
-                >
-                  <h3 class="text-sm text-teal-600 font-normal">
-                    How many instances of Lorem Ipsum usage can be found on the
-                    web?
-                  </h3>
-                  <div
-                    class="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center text-gray-500 text-xs bg-white accordion-icon"
-                  >
-                    <i class="bx bx-minus text-lg"></i>
-                  </div>
-                </div>
-                <div
-                  class="accordion-content px-5 pb-5 text-sm text-gray-600 leading-relaxed"
-                >
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa
-                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-                  beer labore wes andersen cred nesciunt sapiente ea proident.
-                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer farm-to-table, raw denim aesthetic synth nesciunt you
-                  probably haven't heard of them accusamus labore sustainable
-                  VHS.
+                  <h4 class="text-white text-xl font-bold mb-2">
+                    Explore World
+                  </h4>
+                  <p class="text-white/90 text-sm">
+                    Adventures that broaden your horizons
+                  </p>
                 </div>
               </div>
 
-              <div class="accordion-item border-b border-gray-100">
+              <!-- Travel -->
+              <div
+                class="portfolio-card relative overflow-hidden rounded-2xl shadow-lg cursor-pointer group h-64"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=300&fit=crop"
+                  alt="Travel"
+                  class="w-full h-full object-cover"
+                />
                 <div
-                  class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50"
-                  onclick="toggleAccordion(this)"
+                  class="overlay absolute inset-0 flex flex-col justify-end p-6"
                 >
-                  <h3 class="text-sm text-teal-600 font-normal">
-                    What is Lorum Ipsum and who invented it?
-                  </h3>
-                  <div
-                    class="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center text-gray-500 text-xs bg-white accordion-icon"
-                  >
-                    <i class="bx bx-plus text-lg"></i>
-                  </div>
-                </div>
-                <div
-                  class="accordion-content px-5 pb-5 text-sm text-gray-600 leading-relaxed hidden"
-                >
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa
-                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-                  beer labore wes anderson cred nesciunt sapiente ea proident.
-                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer farm-to-table, raw denim aesthetic synth nesciunt you
-                  probably haven't heard of them accusamus labore sustainable
-                  VHS.
+                  <h4 class="text-white text-xl font-bold mb-2">Travel</h4>
+                  <p class="text-white/90 text-sm">
+                    Journey to extraordinary destinations
+                  </p>
                 </div>
               </div>
 
-              <div class="accordion-item">
+              <!-- Colors -->
+              <div
+                class="portfolio-card relative overflow-hidden rounded-2xl shadow-lg cursor-pointer group h-64"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop"
+                  alt="Colors"
+                  class="w-full h-full object-cover"
+                />
                 <div
-                  class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50"
-                  onclick="toggleAccordion(this)"
+                  class="overlay absolute inset-0 flex flex-col justify-end p-6"
                 >
-                  <h3 class="text-sm text-teal-600 font-normal">
-                    How may times Lorum Ipsum has been used in this theme?
-                  </h3>
-                  <div
-                    class="w-5 h-5 border border-gray-300 rounded-full flex items-center justify-center text-gray-500 text-xs bg-white accordion-icon"
-                  >
-                    <i class="bx bx-plus text-lg"></i>
-                  </div>
+                  <h4 class="text-white text-xl font-bold mb-2">Colors</h4>
+                  <p class="text-white/90 text-sm">
+                    Vibrant palettes that inspire creativity
+                  </p>
                 </div>
+              </div>
+
+              <!-- Through Nature -->
+              <div
+                class="portfolio-card relative overflow-hidden rounded-2xl shadow-lg cursor-pointer group h-64"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop"
+                  alt="Through Nature"
+                  class="w-full h-full object-cover"
+                />
                 <div
-                  class="accordion-content px-5 pb-5 text-sm text-gray-600 leading-relaxed hidden"
+                  class="overlay absolute inset-0 flex flex-col justify-end p-6"
                 >
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life
-                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa
-                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-                  aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
-                  beer labore wes anderson cred nesciunt sapiente ea proident.
-                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
-                  beer farm-to-table, raw denim aesthetic synth nesciunt you
-                  probably haven't heard of them accusamus labore sustainable
-                  VHS.
+                  <h4 class="text-white text-xl font-bold mb-2">
+                    Through Nature
+                  </h4>
+                  <p class="text-white/90 text-sm">
+                    Finding peace in natural landscapes
+                  </p>
+                </div>
+              </div>
+
+              <!-- World -->
+              <div
+                class="portfolio-card relative overflow-hidden rounded-2xl shadow-lg cursor-pointer group h-64"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop"
+                  alt="World"
+                  class="w-full h-full object-cover"
+                />
+                <div
+                  class="overlay absolute inset-0 flex flex-col justify-end p-6"
+                >
+                  <h4 class="text-white text-xl font-bold mb-2">World</h4>
+                  <p class="text-white/90 text-sm">
+                    Global perspectives and cultural diversity
+                  </p>
+                </div>
+              </div>
+
+              <!-- Cultures -->
+              <div
+                class="portfolio-card relative overflow-hidden rounded-2xl shadow-lg cursor-pointer group h-64"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=300&fit=crop"
+                  alt="Cultures"
+                  class="w-full h-full object-cover"
+                />
+                <div
+                  class="overlay absolute inset-0 flex flex-col justify-end p-6"
+                >
+                  <h4 class="text-white text-xl font-bold mb-2">Cultures</h4>
+                  <p class="text-white/90 text-sm">
+                    Rich traditions from around the globe
+                  </p>
+                </div>
+              </div>
+
+              <!-- Habits -->
+              <div
+                class="portfolio-card relative overflow-hidden rounded-2xl shadow-lg cursor-pointer group h-64"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=300&fit=crop"
+                  alt="Habits"
+                  class="w-full h-full object-cover"
+                />
+                <div
+                  class="overlay absolute inset-0 flex flex-col justify-end p-6"
+                >
+                  <h4 class="text-white text-xl font-bold mb-2">Habits</h4>
+                  <p class="text-white/90 text-sm">
+                    Building positive daily routines
+                  </p>
+                </div>
+              </div>
+
+              <!-- Being Yourself -->
+              <div
+                class="portfolio-card relative overflow-hidden rounded-2xl shadow-lg cursor-pointer group h-64"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&h=300&fit=crop"
+                  alt="Being Yourself"
+                  class="w-full h-full object-cover"
+                />
+                <div
+                  class="overlay absolute inset-0 flex flex-col justify-end p-6"
+                >
+                  <h4 class="text-white text-xl font-bold mb-2">
+                    Being Yourself
+                  </h4>
+                  <p class="text-white/90 text-sm">
+                    Authentic self-expression and individuality
+                  </p>
+                </div>
+              </div>
+
+              <!-- Nature -->
+              <div
+                class="portfolio-card relative overflow-hidden rounded-2xl shadow-lg cursor-pointer group h-64"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop"
+                  alt="Nature"
+                  class="w-full h-full object-cover"
+                />
+                <div
+                  class="overlay absolute inset-0 flex flex-col justify-end p-6"
+                >
+                  <h4 class="text-white text-xl font-bold mb-2">Nature</h4>
+                  <p class="text-white/90 text-sm">
+                    The beauty and wonder of the natural world
+                  </p>
+                </div>
+              </div>
+
+              <!-- Routines -->
+              <div
+                class="portfolio-card relative overflow-hidden rounded-2xl shadow-lg cursor-pointer group h-64"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=300&fit=crop"
+                  alt="Routines"
+                  class="w-full h-full object-cover"
+                />
+                <div
+                  class="overlay absolute inset-0 flex flex-col justify-end p-6"
+                >
+                  <h4 class="text-white text-xl font-bold mb-2">Routines</h4>
+                  <p class="text-white/90 text-sm">
+                    Structure that brings balance to life
+                  </p>
+                </div>
+              </div>
+
+              <!-- Life -->
+              <div
+                class="portfolio-card relative overflow-hidden rounded-2xl shadow-lg cursor-pointer group h-64"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=300&fit=crop"
+                  alt="Life"
+                  class="w-full h-full object-cover"
+                />
+                <div
+                  class="overlay absolute inset-0 flex flex-col justify-end p-6"
+                >
+                  <h4 class="text-white text-xl font-bold mb-2">Life</h4>
+                  <p class="text-white/90 text-sm">
+                    Celebrating every moment and milestone
+                  </p>
+                </div>
+              </div>
+
+              <!-- Vision -->
+              <div
+                class="portfolio-card relative overflow-hidden rounded-2xl shadow-lg cursor-pointer group h-64"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop"
+                  alt="Vision"
+                  class="w-full h-full object-cover"
+                />
+                <div
+                  class="overlay absolute inset-0 flex flex-col justify-end p-6"
+                >
+                  <h4 class="text-white text-xl font-bold mb-2">Vision</h4>
+                  <p class="text-white/90 text-sm">
+                    Clear sight towards future possibilities
+                  </p>
                 </div>
               </div>
             </div>
@@ -1197,7 +1250,7 @@
         </main>
 
         <!-- Footer -->
-        <footer
+         <footer
           class="p-4 lg:p-8 text-center text-gray-400 text-xs bg-gray-100"
         >
           Copyright © 2023 Stellar. All rights reserved.
@@ -1212,8 +1265,10 @@
           >
         </footer>
       </div>
+      </div>
     </div>
 
+    <!-- Floating Help Button -->
     <div
       class="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 w-10 h-10 sm:w-12 sm:h-12 bg-teal-400 rounded-full flex items-center justify-center text-white text-lg sm:text-xl cursor-pointer shadow-lg hover:bg-teal-700 transition-colors z-30"
     >
@@ -1255,17 +1310,18 @@
         });
       });
 
-      // Accordion functionality
-      function toggleAccordion(header) {
-        const content = header.nextElementSibling;
-        const icon = header.querySelector(".accordion-icon");
+      function toggleAccordion(id) {
+        const content = document.getElementById(id);
+        const icon = document.querySelector(`[data-target="${id}"] i`);
 
         if (content.classList.contains("hidden")) {
           content.classList.remove("hidden");
-          icon.innerHTML = `<i class="bx bx-minus text-lg"></i>`;
+          icon.classList.remove("bx-plus");
+          icon.classList.add("bx-minus");
         } else {
           content.classList.add("hidden");
-          icon.innerHTML = `<i class="bx bx-plus text-lg"></i>`;
+          icon.classList.remove("bx-minus");
+          icon.classList.add("bx-plus");
         }
       }
 
