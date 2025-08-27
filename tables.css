@@ -1,0 +1,75 @@
+.profile-link {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* space between items */
+  font-family: Arial, sans-serif;
+}
+
+.badge {
+  background-color: #e91e63; 
+  color: white;              
+  padding: 3px 8px;           
+  border-radius: 50%;        
+  font-size: 12px;            
+  font-weight: bold;          
+}
+        .table-container {
+                        margin-top: 20px;
+                    }
+                    .progress {
+                        height: 20px;
+                        margin: 0;
+                    }
+                    .bg-purple {
+                        background-color: #6f42c1;
+                    }
+
+                    .table-container1{
+      background: #fff;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+    }
+
+
+.salesup {
+    color: green;
+}
+.salesdown{
+    color: red;
+}
+.searchinput{
+  display: inline-flex;
+  float: right;
+  height: 4rem;
+}
+  .status-btn {
+      pointer-events: none; /* Make button unclickable */
+      opacity: 1;           /* Keep color visible */
+      color: white;
+      border: none;
+      padding: 5px 12px;
+      font-weight: bold;
+      border-radius: 5px;
+      width: 80px;
+      text-align: center;
+    }
+    .on-hold { background-color: #a142f4; }   /* Purple */
+    .pending { background-color: #f44336; }   /* Red */
+    .closed  { background-color: #4CAF50; }   /* Green */
+    .view-btn {
+      border: 1px solid #00d3ee;
+      color: #00d3ee;
+      background-color: transparent;
+      border-radius: 5px;
+      padding: 5px 12px;
+    }
+    .btn-purple {
+        background-color: #6f42c1; 
+        color: white;
+    }
+    .btn-purple:disabled {
+        background-color: #6f42c1; 
+        color: white;
+        opacity: 1;
