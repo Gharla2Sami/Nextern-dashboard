@@ -6,6 +6,22 @@
     <title>Stellar Dashboard</title>
     <script src="tailwind.js"></script>
     <link rel="stylesheet" href="fonts/basic/boxicons.min.css" />
+    <link rel="stylesheet" href="try.css" />
+    <link rel="stylesheet" href="tables.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
     <script>
       tailwind.config = {
         theme: {
@@ -447,7 +463,7 @@
                 class="nav-submenu max-h-0 overflow-hidden transition-all duration-300 bg-sidebarDark"
               >
                 <a
-                  href="Basictable.html"
+                  href="#"
                   class="block px-8 sm:px-10 py-2 text-xs text-gray-400 hover:bg-sidebarLight hover:text-gray-300 transition-colors"
                   >Basic Table</a
                 >
@@ -599,14 +615,14 @@
             </div>
 
             <!-- General Pages (Expanded) -->
-            <div class="nav-item-with-children expanded">
+            <div class="nav-item-with-children">
               <div
                 class="flex items-center justify-between px-4 sm:px-5 py-2.5 text-sm text-gray-300 hover:bg-sidebarLight hover:text-white transition-colors cursor-pointer"
                 onclick="toggleSubmenu(this)"
               >
                 <span class="truncate">General Pages</span>
                 <svg
-                  class="w-4 h-4 transform rotate-90 transition-transform"
+                  class="w-4 h-4 transform transition-transform flex-shrink-0 ml-2"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -621,7 +637,7 @@
               </div>
 
               <div
-                class="nav-submenu max-h-96 overflow-hidden transition-all duration-300 bg-sidebarDark"
+                class="nav-submenu max-h-0 overflow-hidden transition-all duration-300 bg-sidebarDark"
               >
                 <a
                   href="blank.html"
@@ -644,7 +660,7 @@
                   >FAQ 2</a
                 >
                 <a
-                  href="news-grids.html"
+                  href="news-grid.html"
                   class="block px-8 sm:px-10 py-2 text-xs text-gray-400 hover:bg-sidebarLight hover:text-gray-300 transition-colors"
                   >News Grid</a
                 >
@@ -797,7 +813,7 @@
                 <button
                   id="dropdownDefaultButton"
                   data-dropdown-toggle="dropdown"
-                  class="text-slate-900 bg-white hover:bg-white/50 focus:ring-2 focus:outline-none focus:ring-blue-300 text-xs sm:text-sm px-2 sm:px-5 py-2.5 text-center inline-flex items-center"
+                  class="text-slate-900 bg-white hover:bg-white/50 focus:ring-2 focus:outline-none focus:ring-blue-300 rounded-lg text-xs sm:text-sm px-2 sm:px-5 py-2.5 text-center inline-flex items-center"
                   type="button"
                 >
                   <span class="hidden sm:inline">ENGLISH</span>
@@ -808,7 +824,7 @@
                 <!-- Dropdown menu -->
                 <div
                   id="dropdown"
-                  class="z-10 hidden shadow-2xl bg-white divide-y divide-gray-100 mt-6 w-44"
+                  class="z-10 hidden shadow-2xl bg-white divide-y divide-gray-100 rounded-lg mt-6 w-44"
                 >
                   <ul
                     class="py-2 text-sm text-gray-700"
@@ -868,336 +884,739 @@
 
         <!-- Content -->
         <main class="p-4 sm:p-6 lg:p-8">
-          <!-- Breadcrumb -->
-          <nav
-            class="text-sm text-gray-500 mb-2 flex content-center justify-between"
-          >
-            <h3
-              class="text-lg lg:text-xl text-gray-800 font-medium mb-6 lg:mb-8"
-            >
-              Profile
-            </h3>
-            <span
-              ><a href="#" class="text-blue-600 hover:text-blue-800"
-                >Sample pages</a
-              >
-              / Profile</span
-            >
+          <nav class="navbar-light bg-light">
+            <div class="container">
+              <a class="navbar-brand" href="#" style="margin-right: 45rem">
+                Basic Tables
+              </a>
+              <span><a href="g">Tables </a>/ Basic tables</span>
+            </div>
           </nav>
 
-          <div class="space-y-5">
-            <div class="bg-white rounded-lg shadow-sm overflow-hidden">
-              <div class="p-6">
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                  <!-- Left Sidebar -->
-                  <div class="lg:col-span-1">
-                    <!-- Profile Info -->
-                    <div class="text-center pb-6 border-b border-gray-200">
-                      <div
-                        class="w-24 h-24 rounded-full bg-gray-300 mx-auto mb-4 overflow-hidden"
-                      >
-                        <div
-                          class="w-full h-full overflow-hidden bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white text-2xl font-bold"
-                        >
-                          <img src="face12.jpg" alt="" />
-                        </div>
-                      </div>
-                      <p class="text-gray-600 text-sm mb-4">
-                        Bureau Oberhaeuser is a design bureau focused on
-                        Information- and Interface Design.
+          <div class="container px-4">
+            <div class="row gx-5">
+              <div class="col-md-6">
+                <div class="p-3 border bg-light">
+                  <table class="table">
+                    <span>Basic Table</span>
+                    <p>
+                      <span style="color: gray">Add class</span>
+                      <span style="color: red">.table</span>
+                    </p>
+                    <thead>
+                      <tr>
+                        <th scope="col">Profile</th>
+                        <th scope="col">VatNo.</th>
+                        <th scope="col">Created</th>
+                        <th scope="col">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Jacob</th>
+                        <td>53275531</td>
+                        <td>12 May 2017</td>
+                        <td>
+                          <button
+                            class="btn btn-secondary btn-sm w-30"
+                            style="
+                              max-width: 200px;
+                              background-color: rgb(243, 6, 6);
+                            "
+                            disabled
+                          >
+                            pending
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Messsy</th>
+                        <td>53275532</td>
+                        <td>15 May 2017</td>
+                        <td>
+                          <button
+                            class="btn btn-secondary btn-sm w-60"
+                            style="
+                              max-width: 200px;
+                              background-color: orangered;
+                            "
+                            disabled
+                          >
+                            in progress
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">John</th>
+                        <td>53275533</td>
+                        <td>14 May 2017</td>
+                        <td>
+                          <button
+                            class="btn btn-secondary btn-sm w-23"
+                            style="
+                              max-width: 200px;
+                              background-color: rgb(207, 51, 207);
+                            "
+                            disabled
+                          >
+                            fixed
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Peter</th>
+                        <td>53275534</td>
+                        <td>16 May 2017</td>
+                        <td>
+                          <button
+                            class="btn btn-secondary btn-sm w-60"
+                            style="max-width: 200px; background-color: green"
+                            disabled
+                          >
+                            completed
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Dave</th>
+                        <td>53275535</td>
+                        <td>20 May 2017</td>
+                        <td>
+                          <button
+                            class="btn btn-secondary btn-sm w-60"
+                            style="max-width: 200px; background-color: orange"
+                            disabled
+                          >
+                            in progress
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="p-3 border bg-light">
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <span>Hoverable Table</span>
+                      <p>
+                        <span style="color: gray">Add class</span>
+                        <span style="color: red">.table-hover</span>
                       </p>
-                      <div class="flex space-x-3 justify-center">
-                        <button
-                          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
-                        >
-                          Hire Me
-                        </button>
-                        <button
-                          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
-                        >
-                          Follow
-                        </button>
-                      </div>
-                    </div>
-
-                    <!-- Skills -->
-                    <div class="py-6 border-b border-gray-200">
-                      <h3 class="text-sm font-medium text-gray-900 mb-3">
-                        Skills
-                      </h3>
-                      <div class="flex flex-wrap gap-2">
-                        <span
-                          class="px-3 py-1 bg-gray-100 border border-gray-300 text-xs text-gray-700"
-                          >Chalk</span
-                        >
-                        <span
-                          class="px-3 py-1 bg-gray-100 border border-gray-300 text-xs text-gray-700"
-                          >Hand lettering</span
-                        >
-                        <span
-                          class="px-3 py-1 bg-gray-100 border border-gray-300 text-xs text-gray-700"
-                          >Information Design</span
-                        >
-                        <span
-                          class="px-3 py-1 bg-gray-100 border border-gray-300 text-xs text-gray-700"
-                          >Graphic Design</span
-                        >
-                        <span
-                          class="px-3 py-1 bg-gray-100 border border-gray-300 text-xs text-gray-700"
-                          >Web Design</span
-                        >
-                      </div>
-                    </div>
-
-                    <!-- Progress Bars -->
-                    <div class="py-6 border-b border-gray-200">
-                      <div class="mb-4">
-                        <div class="w-full bg-gray-200 rounded-full h-2">
-                          <div
-                            class="bg-blue-500 h-2 rounded-full"
-                            style="width: 55%"
-                          ></div>
-                        </div>
-                      </div>
-                      <div>
-                        <div class="w-full bg-gray-200 rounded-full h-2">
-                          <div
-                            class="bg-green-500 h-2 rounded-full"
-                            style="width: 75%"
-                          ></div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Contact Info -->
-                    <div class="py-6">
-                      <div class="space-y-3 text-sm">
-                        <div class="flex justify-between">
-                          <span class="text-gray-600">Status</span>
-                          <span class="text-gray-900">Active</span>
-                        </div>
-                        <div class="flex justify-between">
-                          <span class="text-gray-600">Phone</span>
-                          <span class="text-gray-900">006 3435 22</span>
-                        </div>
-                        <div class="flex justify-between">
-                          <span class="text-gray-600">Mail</span>
-                          <span class="text-gray-900">Jacod@testmail.com</span>
-                        </div>
-                        <div class="flex justify-between">
-                          <span class="text-gray-600">Facebook</span>
-                          <a href="#" class="text-blue-600 hover:underline"
-                            >David Grey</a
-                          >
-                        </div>
-                        <div class="flex justify-between">
-                          <span class="text-gray-600">Twitter</span>
-                          <a href="#" class="text-blue-600 hover:underline"
-                            >@davidgrey</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-
-                    <button
-                      class="w-full bg-cyan-500 hover:bg-cyan-600 text-white py-2 rounded-md font-medium transition-colors"
-                    >
-                      Preview
-                    </button>
-                  </div>
-
-                  <!-- Right Content -->
-                  <div class="lg:col-span-2">
-                    <!-- Profile Header -->
-                    <div class="flex justify-between items-start mb-6">
-                      <div>
-                        <h2 class="text-2xl font-semibold text-gray-900">
-                          David Grey. H
-                        </h2>
-                        <div class="flex items-center mt-1">
-                          <span class="text-gray-500 mr-3">Canada</span>
-                          <div class="flex text-yellow-400">
-                            <i class="bx bx-star"></i>
-                            <i class="bx bx-star text-gray-300"></i>
-                            <i class="bx bx-star text-gray-300"></i>
-                            <i class="bx bx-star text-gray-300"></i>
-                            <i class="bx bx-star text-gray-300"></i>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="flex space-x-3">
-                        <button
-                          class="border border-gray-300 text-gray-700 p-2 rounded-md hover:bg-gray-50 transition-colors"
-                        >
-                          <i class="bx bx-phone"></i>
-                        </button>
-                        <button
-                          class="bg-cyan-400 hover:bg-cyan-500 text-white px-8 py-2 rounded-md font-medium transition-colors"
-                        >
-                          Request
-                        </button>
-                      </div>
-                    </div>
-
-                    <!-- Navigation Tabs -->
-                    <div class="border-t border-b border-gray-200 py-4 mb-6">
-                      <nav class="flex space-x-8">
-                        <a
-                          href="#"
-                          class="flex items-center text-gray-500 hover:text-gray-900 text-sm font-medium"
-                        >
-                          <i class="bx bx-user mr-2"></i>Info
-                        </a>
-                        <a
-                          href="#"
-                          class="flex items-center text-cyan-600 border-b-2 border-cyan-600 text-sm font-medium pb-4 mb-[-16px]"
-                        >
-                          <i class="bx bx-rss mr-2"></i>Feed
-                        </a>
-                        <a
-                          href="#"
-                          class="flex items-center text-gray-500 hover:text-gray-900 text-sm font-medium"
-                        >
-                          <i class="bx bx-calendar mr-2"></i>Agenda
-                        </a>
-                        <a
-                          href="#"
-                          class="flex items-center text-gray-500 hover:text-gray-900 text-sm font-medium"
-                        >
-                          <i class="bx bx-paperclip mr-2"></i>Resume
-                        </a>
-                      </nav>
-                    </div>
-
-                    <!-- Feed -->
-                    <div class="space-y-6">
-                      <!-- Feed Item 1 -->
-                      <div class="flex space-x-4">
-                        <div
-                          class="w-10 h-10 rounded-full overflow-hidden bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center text-white text-sm font-bold flex-shrink-0"
-                        >
-                          <img src="face13.jpg" alt="" />
-                        </div>
-                        <div class="flex-1">
-                          <div class="flex items-center space-x-2 mb-2">
-                            <h4 class="font-medium text-gray-900">
-                              Mason Beck
-                            </h4>
-                            <span class="text-gray-400 text-sm">
-                              <i class="bx bx-clock mr-1"></i>10 hours
-                            </span>
-                          </div>
-                          <p class="text-gray-700 mb-3">
-                            There is no better advertisement campaign that is
-                            low cost and also successful at the same time.
-                          </p>
-                          <div
-                            class="flex items-center space-x-4 text-sm text-gray-500"
-                          >
-                            <span><i class="bx bx-star mr-1"></i>4</span>
-                            <span><i class="bx bx-message mr-1"></i>11</span>
-                            <button><i class="bx bx-undo"></i></button>
-                          </div>
-                        </div>
-                      </div>
-
-                      <!-- Feed Item 2 -->
-                      <div class="flex space-x-4">
-                        <div
-                          class="w-10 h-10 rounded-full overflow-hidden bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center text-white text-sm font-bold flex-shrink-0"
-                        >
-                          <img src="face16.jpg" alt="" />
-                        </div>
-                        <div class="flex-1">
-                          <div class="flex items-center space-x-2 mb-2">
-                            <h4 class="font-medium text-gray-900">
-                              Willie Stanley
-                            </h4>
-                            <span class="text-gray-400 text-sm">
-                              <i class="bx bx-clock mr-1"></i>10 hours
-                            </span>
-                          </div>
-                          <div class="mb-3">
-                            <img
-                              src="12.jpg"
-                              alt="Landscape"
-                              class="rounded-lg w-full"
-                            />
-                          </div>
-                          <div
-                            class="flex items-center space-x-4 text-sm text-gray-500"
-                          >
-                            <span><i class="bx bx-star mr-1"></i>4</span>
-                            <span><i class="bx bx-message mr-1"></i>11</span>
-                            <button><i class="bx bx-undo"></i></button>
-                          </div>
-                        </div>
-                      </div>
-
-                      <!-- Feed Item 3 -->
-                      <div class="flex space-x-4">
-                        <div
-                          class="w-10 overflow-hidden h-10 rounded-full bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-white text-sm font-bold flex-shrink-0"
-                        >
-                          <img src="face19.jpg" alt="" />
-                        </div>
-                        <div class="flex-1">
-                          <div class="flex items-center space-x-2 mb-2">
-                            <h4 class="font-medium text-gray-900">
-                              Dylan Silva
-                            </h4>
-                            <span class="text-gray-400 text-sm">
-                              <i class="bx bx-clock mr-1"></i>10 hours
-                            </span>
-                          </div>
-                          <p class="text-gray-700 mb-3">
-                            When I first got into the online advertising
-                            business, I was looking for the magical combination
-                            that would put my website into the top search engine
-                            rankings
-                          </p>
-                          <div class="mb-3">
-                            <img
-                              src="5.jpg"
-                              alt="Portrait"
-                              class="rounded-lg w-full"
-                            />
-                          </div>
-                          <div
-                            class="flex items-center space-x-4 text-sm text-gray-500"
-                          >
-                            <span><i class="bx bx-star mr-1"></i>4</span>
-                            <span><i class="bx bx-message mr-1"></i>11</span>
-                            <button><i class="bx bx-undo"></i></button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                      <thead class="table-light">
+                        <tr>
+                          <th>User</th>
+                          <th>Product</th>
+                          <th>Sales</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Jacob</td>
+                          <td>Photoshop</td>
+                          <td class="salesdown" style="color: red">
+                            28.76%<i class="fa-regular fa-circle-down"></i>
+                          </td>
+                          <td>
+                            <button
+                              class="btn btn-secondary btn-sm w-30"
+                              style="
+                                max-width: 200px;
+                                background-color: rgb(243, 6, 6);
+                              "
+                              disabled
+                            >
+                              pending
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Messsy</td>
+                          <td>Flash</td>
+                          <td class="salesdown" style="color: red">
+                            21.06%<i class="fa-regular fa-circle-down"></i>
+                          </td>
+                          <td>
+                            <button
+                              class="btn btn-secondary btn-sm w-60"
+                              style="
+                                max-width: 200px;
+                                background-color: orangered;
+                              "
+                              disabled
+                            >
+                              in progress
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>John</td>
+                          <td>Premier</td>
+                          <td class="salesdown" style="color: red">
+                            35.00%<i class="fa-regular fa-circle-down"></i>
+                          </td>
+                          <td>
+                            <button
+                              class="btn btn-secondary btn-sm w-23"
+                              style="
+                                max-width: 200px;
+                                background-color: rgb(207, 51, 207);
+                              "
+                              disabled
+                            >
+                              fixed
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Peter</td>
+                          <td>After effects</td>
+                          <td class="salesup" style="color: green">
+                            82.00%<i class="fa-regular fa-circle-up"></i>
+                          </td>
+                          <td>
+                            <button
+                              class="btn btn-secondary btn-sm w-60"
+                              style="max-width: 200px; background-color: green"
+                              disabled
+                            >
+                              completed
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Dave</td>
+                          <td>53275535</td>
+                          <td class="salesup" style="color: green">
+                            98.05%<i class="fa-regular fa-circle-up"></i>
+                          </td>
+                          <td>
+                            <button
+                              class="btn btn-secondary btn-sm w-60"
+                              style="max-width: 200px; background-color: orange"
+                              disabled
+                            >
+                              in progress
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <br />
+
+          <div class="container mt-4">
+            <table class="table table-striped">
+              <thead class="table-white">
+                <p style="margin-bottom: 0px; background-color: white">
+                  <span>Basic Table</span>
+                </p>
+                <p
+                  style="
+                    background-color: white;
+                    margin-bottom: 0px;
+                    margin-top: 0px;
+                  "
+                >
+                  <span style="color: gray">Add class</span>
+                  <span style="color: red">.table</span>
+                </p>
+                <tr>
+                  <th>User</th>
+                  <th>First name</th>
+                  <th>Progress</th>
+                  <th>Amount</th>
+                  <th>Deadline</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <img
+                      src="male-avatar-boy-face-man-user-7.svg"
+                      alt=""
+                      style="width: 2.5rem"
+                    />
+                  </td>
+                  <td>Herman Beck</td>
+                  <td>
+                    <div class="container mt-4">
+                      <div
+                        class="progress mb-3"
+                        style="height: 6px; max-width: 400px"
+                      >
+                        <div
+                          class="progress-bar bg-success"
+                          role="progressbar"
+                          style="width: 20%"
+                          aria-valuenow="20"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>$ 77.99</td>
+                  <td>May 15, 2015</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.avif"
+                      alt=""
+                      style="width: 2.5rem"
+                    />
+                  </td>
+                  <td>Messsy Adam</td>
+                  <td>
+                    <div class="container mt-4">
+                      <div
+                        class="progress mb-3"
+                        style="height: 6px; max-width: 400px"
+                      >
+                        <div
+                          class="progress-bar bg-danger"
+                          role="progressbar"
+                          style="width: 70%"
+                          aria-valuenow="70"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>$245.30</td>
+                  <td>July 1, 2015</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="548a659c2b06a877516d3c998f5b0939.jpg"
+                      alt=""
+                      style="width: 2.5rem"
+                    />
+                  </td>
+                  <td>John Richards</td>
+                  <td>
+                    <div class="container mt-4">
+                      <div
+                        class="progress mb-3"
+                        style="height: 6px; max-width: 400px"
+                      >
+                        <div
+                          class="progress-bar bg-warning"
+                          role="progressbar"
+                          style="width: 80%"
+                          aria-valuenow="80"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>$138.00</td>
+                  <td>Apr 12, 2015</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="avatar-profile-icon-in-flat-style-male-user-vector-51581597.jpg"
+                      alt=""
+                      style="width: 2.5rem"
+                    />
+                  </td>
+                  <td>Peter Meggik</td>
+                  <td>
+                    <div class="container mt-4">
+                      <div
+                        class="progress mb-3"
+                        style="height: 6px; max-width: 400px"
+                      >
+                        <div
+                          class="progress-bar bg-info"
+                          role="progressbar"
+                          style="width: 50%"
+                          aria-valuenow="50"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>$ 77.99</td>
+                  <td>May 15, 2015</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      src="png-transparent-computer-icons-woman-avatar-avatar-girl-thumbnail.png"
+                      alt=""
+                      style="width: 2.5rem"
+                    />
+                  </td>
+                  <td>Edward</td>
+                  <td>
+                    <div class="container mt-4">
+                      <div
+                        class="progress mb-3"
+                        style="height: 6px; max-width: 400px"
+                      >
+                        <div
+                          class="progress-bar bg-danger"
+                          role="progressbar"
+                          style="width: 40%"
+                          aria-valuenow="40"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>$ 160.25</td>
+                  <td>May 03, 2015</td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <img
+                      src="802043_man_512x512.png"
+                      alt=""
+                      style="width: 2.5rem"
+                    />
+                  </td>
+                  <td>John Doe</td>
+                  <td>
+                    <div class="container mt-4">
+                      <div
+                        class="progress mb-3"
+                        style="height: 6px; max-width: 400px"
+                      >
+                        <div
+                          class="progress-bar"
+                          style="width: 60%; background-color: purple"
+                          aria-valuenow="60"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>$ 123.21</td>
+                  <td>April 05, 2015</td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <img
+                      src="computer-icons-user-profile-avatar-female-png-favpng-cqykKc0Hpkh65ueWt6Nh2KFvS.jpg"
+                      alt=""
+                      style="width: 2.5rem"
+                    />
+                  </td>
+                  <td>Henry Tom</td>
+                  <td>
+                    <div class="container mt-4">
+                      <div
+                        class="progress mb-3"
+                        style="height: 6px; max-width: 400px"
+                      >
+                        <div
+                          class="progress-bar bg-warning"
+                          role="progressbar"
+                          style="width: 30%"
+                          aria-valuenow="30"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>$ 150.00</td>
+                  <td>June 16, 2015</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="container table-container">
+            <table class="table table-bordered">
+              <thead>
+                <h3 style="background-color: white; margin-bottom: 0px">
+                  Bordered Table <br /><span class="text-muted"
+                    >Add class .table-bordered</span
+                  >
+                </h3>
+                <tr>
+                  <th>#</th>
+                  <th>First name</th>
+                  <th>Progress</th>
+                  <th>Amount</th>
+                  <th>Deadline</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Herman Beck</td>
+                  <td>
+                    <div class="progress">
+                      <div
+                        class="progress-bar bg-success"
+                        role="progressbar"
+                        style="width: 25%"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                    </div>
+                  </td>
+                  <td>$77.99</td>
+                  <td>May 15, 2015</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Messy Adam</td>
+                  <td>
+                    <div class="progress">
+                      <div
+                        class="progress-bar bg-danger"
+                        role="progressbar"
+                        style="width: 75%"
+                        aria-valuenow="75"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                    </div>
+                  </td>
+                  <td>$245.30</td>
+                  <td>July 1, 2015</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>John Richards</td>
+                  <td>
+                    <div class="progress">
+                      <div
+                        class="progress-bar bg-warning"
+                        role="progressbar"
+                        style="width: 50%"
+                        aria-valuenow="50"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                    </div>
+                  </td>
+                  <td>$138.00</td>
+                  <td>Apr 12, 2015</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Peter Meggik</td>
+                  <td>
+                    <div class="progress">
+                      <div
+                        class="progress-bar bg-info"
+                        role="progressbar"
+                        style="width: 30%"
+                        aria-valuenow="30"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                    </div>
+                  </td>
+                  <td>$77.99</td>
+                  <td>May 15, 2015</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Edward</td>
+                  <td>
+                    <div class="progress">
+                      <div
+                        class="progress-bar bg-danger"
+                        role="progressbar"
+                        style="width: 20%"
+                        aria-valuenow="20"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                    </div>
+                  </td>
+                  <td>$160.25</td>
+                  <td>May 03, 2015</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>John Doe</td>
+                  <td>
+                    <div class="progress">
+                      <div
+                        class="progress-bar bg-purple"
+                        role="progressbar"
+                        style="width: 60%"
+                        aria-valuenow="60"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                    </div>
+                  </td>
+                  <td>$123.21</td>
+                  <td>April 05, 2015</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>Henry Tom</td>
+                  <td>
+                    <div class="progress">
+                      <div
+                        class="progress-bar bg-warning"
+                        role="progressbar"
+                        style="width: 10%"
+                        aria-valuenow="10"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                    </div>
+                  </td>
+                  <td>$150.00</td>
+                  <td>June 16, 2015</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div
+            class="container"
+            style="background-color: rgb(250, 250, 250); margin-top: 2rem"
+          >
+            <h4>Inverse Table</h4>
+            <p>Add class <code>.table-dark</code></p>
+
+            <table class="table table-dark">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>First name</th>
+                  <th>Amount</th>
+                  <th>Deadline</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Herman Beck</td>
+                  <td>$ 77.99</td>
+                  <td>May 15, 2015</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Messssy Adam</td>
+                  <td>$245.30</td>
+                  <td>July 1, 2015</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>John Richards</td>
+                  <td>$138.00</td>
+                  <td>Apr 12, 2015</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Peter Meggik</td>
+                  <td>$77.99</td>
+                  <td>May 15, 2015</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Edward</td>
+                  <td>$160.25</td>
+                  <td>May 03, 2015</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>John Doe</td>
+                  <td>$123.21</td>
+                  <td>Apr 05, 2015</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>Henry Tom</td>
+                  <td>$150.00</td>
+                  <td>June 16, 2015</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="container" style="margin-top: 2rem">
+            <div class="table-container1">
+              <h4>Table With Contextual Classes</h4>
+              <p>Add class <code>.table-{color}</code></p>
+
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>First name</th>
+                    <th>Product</th>
+                    <th>Amount</th>
+                    <th>Deadline</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-info">
+                    <td>1</td>
+                    <td>Herman Beck</td>
+                    <td>Photoshop</td>
+                    <td>$ 77.99</td>
+                    <td>May 15, 2015</td>
+                  </tr>
+                  <tr class="table-warning">
+                    <td>2</td>
+                    <td>Messssy Adam</td>
+                    <td>Flash</td>
+                    <td>$245.30</td>
+                    <td>July 1, 2015</td>
+                  </tr>
+                  <tr class="table-danger">
+                    <td>3</td>
+                    <td>John Richards</td>
+                    <td>Premeire</td>
+                    <td>$138.00</td>
+                    <td>Apr 12, 2015</td>
+                  </tr>
+                  <tr class="table-info">
+                    <td>4</td>
+                    <td>Peter Meggik</td>
+                    <td>After effects</td>
+                    <td>$77.99</td>
+                    <td>May 15, 2015</td>
+                  </tr>
+                  <tr class="table-primary">
+                    <td>5</td>
+                    <td>Edward</td>
+                    <td>Illustrator</td>
+                    <td>$160.25</td>
+                    <td>May 03, 2015</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </main>
 
         <!-- Footer -->
-        <footer
-          class="p-4 lg:p-8 text-center text-gray-400 text-xs bg-gray-100"
-        >
-          Copyright © 2023 Stellar. All rights reserved.
-          <a href="#" class="text-blue-600 hover:text-blue-800">Terms of use</a>
-          |
-          <a href="#" class="text-blue-600 hover:text-blue-800"
-            >Privacy Policy</a
-          >
-          <br class="hidden sm:block" />
-          <span class="block sm:inline mt-2 sm:mt-4"
-            >Hand crafted & made with <span class="text-red-500">♥</span></span
-          >
-        </footer>
       </div>
     </div>
 
+    <!-- Floating Help Button -->
     <div
       class="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 w-10 h-10 sm:w-12 sm:h-12 bg-teal-400 rounded-full flex items-center justify-center text-white text-lg sm:text-xl cursor-pointer shadow-lg hover:bg-teal-700 transition-colors z-30"
     >
@@ -1206,6 +1625,12 @@
         style="animation: spin 2s linear infinite"
       ></i>
     </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
     <script src="flowbit.min.js"></script>
     <script>
       // Mobile menu functionality
@@ -1238,6 +1663,21 @@
           }
         });
       });
+
+      function toggleAccordion(id) {
+        const content = document.getElementById(id);
+        const icon = document.querySelector(`[data-target="${id}"] i`);
+
+        if (content.classList.contains("hidden")) {
+          content.classList.remove("hidden");
+          icon.classList.remove("bx-plus");
+          icon.classList.add("bx-minus");
+        } else {
+          content.classList.add("hidden");
+          icon.classList.remove("bx-minus");
+          icon.classList.add("bx-plus");
+        }
+      }
 
       // Submenu functionality
       function toggleSubmenu(item) {
